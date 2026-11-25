@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro - Arquivo Winchester</title>
+
+    <!-- Carrega CSS -->
+    <link rel="stylesheet" href="/components/navbar/navbar.css">
+    <link rel="stylesheet" href="/components/footer/footer.css">
+    <link rel="stylesheet" href="register.css">
+
+    <!-- Carrega o favicon -->
+     <link rel="icon" href="/favicon/img_favicon.png">
+
+    <!-- Carrega JS -->
+    <script src="/components/navbar/navbar.js" defer></script>
+    <script src="/components/footer/footer.js" defer></script>
+    <script src="register.js" defer></script>
+</head>
+
+<body>
+    <!-- Skip link -->
+    <a class="skip-link" href="#content">Pular Menu de Navegação</a>
+
+    <app-navbar></app-navbar>
+
+    <!-- Main content -->
+    <main class="main-content" id="content" tabindex="-1">
+        <!-- Section container -->
+        <section class="section-container" aria-label="Cadastro de caçador">
+            <h2>Cadastrar Caçador</h2>
+
+            <form class="form">
+                <!-- Fieldset -->
+                <fieldset class="fieldset">
+                    <legend>Dados do Caçador</legend>
+
+                    <div class="fieldset__hunter-name fieldset__style-field">
+                        <label for="hunterName">Nome do Caçador*</label>
+                        <input id="hunterName" name="hunterName" type="text" placeholder="Ex: Bob Singer"
+                        autocomplete="name" required />
+                        <span class="fieldset__span">Campo obrigatório</span>
+                    </div>
+                    
+                    <div class="fieldset__baseRegion fieldset__style-field">
+                        <label for="baseRegion">Região Base*</label>
+                        <select id="baseRegion" name="baseRegion" required>
+                            <option value="" selected disabled>Selecione...</option>
+                            <option value="norte">Norte</option>
+                            <option value="nordeste">Nordeste</option>
+                            <option value="centroOeste">Centro-Oeste</option>
+                            <option value="sudeste">Sudeste</option>
+                            <option value="sul">Sul</option>
+                        </select>
+                        <span class="fieldset__span">Campo obrigatório</span>
+                    </div>                    
+                    
+                    <div class="fieldset__specialty fieldset__style-field">
+                        <label for="specialty">Especialidade*</label>
+                        <select id="specialty" name="specialty" required>
+                            <option value="" selected disabled>Selecione...</option>
+                            <option value="fantasmas">Fantasmas</option>
+                            <option value="Investigação">Investigação</option>
+                            <option value="criaturas">Criaturas</option>
+                            <option value="rastreio">Rastreio</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                        <span class="fieldset__span">Campo obrigatório</span>
+                    </div>                    
+                    
+                    <div class="fieldset__phone fieldset__style-field">
+                        <label for="phone">Telefone*</label>
+                        <input id="phone" name="phone" type="tel" placeholder="Ex: 16 99999-9999" autocomplete="tel"
+                        required />
+                        <div class="fieldset__span fieldset__span-phone">
+                            <span>Campo obrigatório</span>
+                            <ul>
+                                <li>Formato obrigatório: 16 99999-9999</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="fieldset__password fieldset__style-field">
+                        <label for="password">Senha*</label>
+                        <input id="password" name="password" type="password" autocomplete="new-password" required />
+                        <div class="fieldset__span fieldset__span-password">
+                            <span>Deve conter</span>
+                            <ul>
+                                <li>Uma letra minúscula</li>
+                                <li>Uma letra maiúscula</li>
+                                <li>Um caractere especial</li>
+                                <li>Um dígito</li>
+                                <li>No mínimo oito caracteres</li>
+                            </ul>
+                        </div>
+                    </div>                    
+                    
+                    <div class="fieldset__confirm-password fieldset__style-field">
+                        <label for="confirmPassword">Confirmar Senha*</label>
+                        <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password"
+                        required />
+                        <span class="fieldset__span fieldset__span-password">Campo deve ser igual a senha</span>
+                    </div>
+                    
+                    <div class="fieldset__notes fieldset__style-field">
+                        <label for="notes">Anotações</label>
+                        <textarea id="notes" name="notes" rows="4"
+                        placeholder="Ex: Tenho dificuldade em rastrear anomalias"></textarea>
+                    </div>                    
+
+                    <p class="fieldset__link-login">
+                        Já possui cadastro?
+                        <a href="/pages/login/login.html">Clique aqui</a>
+                    </p>
+
+                    <button class="fieldset__button-submit" type="submit">Cadastrar</button>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <app-footer></app-footer>
+</body>
+
+</html>

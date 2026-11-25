@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caçadas - Arquivo Winchester</title>
+
+    <!-- Carrega o CSS -->
+    <link rel="stylesheet" href="/components/navbar/navbar.css">
+    <link rel="stylesheet" href="/components/footer/footer.css">
+    <link rel="stylesheet" href="register-hunts.css">
+
+    <!-- Carrega o favicon -->
+    <link rel="icon" href="/favicon/img_favicon.png">
+
+    <!-- Carrega o JS -->
+    <script src="/components/navbar/navbar.js" defer></script>
+    <script src="/components/footer/footer.js" defer></script>
+    <script type="module" src="register-hunts.js" defer></script>
+</head>
+
+<body>
+    <!-- Skip link -->
+    <a class="skip-link" href="#content">Pular Menu de Navegação</a>
+
+    <app-navbar></app-navbar>
+
+    <!-- Main content -->
+    <main id="content" class="main-content" tabindex="-1">
+        <h1>Caçadas</h1>
+
+        <!-- Section links -->
+        <section class="section-links" aria-label="Ações de caçadas">
+            <a href="/pages/hunts/register-hunts/register-hunts.html" class="section-links__new-hunt"
+                aria-current="page">Nova Caçada</a>
+            <a href="/pages/hunts/list-hunts/list-hunts.html" class="section-links__list-hunts">Ver Caçadas</a>
+            <a href="/pages/hunts/map/map.html" class="section-links__map">Mapa</a>
+        </section>
+
+        <!-- Section container -->
+        <section class="section-container" aria-label="Cadastrar caçada">
+            <h2>Cadastrar Caçada</h2>
+
+            <form class="form">
+                <!-- Fieldset -->
+                <fieldset class="fieldset">
+                    <legend>Dados da Caçada</legend>
+
+                    <div class="fieldset__title fieldset__style-field">
+                        <label for="title">Título*</label>
+                        <input id="title" name="title" type="text" placeholder="Ex: Aparição no Hospital Municipal"
+                            required />
+                        <span class="fieldset__span">Campo obrigatório</span>
+                    </div>
+
+                    <div class="fieldset__status fieldset__style-field">
+                        <label for="status">Status*</label>
+                        <select id="status" name="status" required>
+                            <option value="" selected disabled>Selecione...</option>
+                            <option value="aberto">Aberto</option>
+                            <option value="investigando">Investigando</option>
+                            <option value="resolvido">Resolvido</option>
+                            <option value="arquivado">Arquivado</option>
+                        </select>
+                        <span class="fieldset__span">Campo obrigatório</span>
+                    </div>
+
+                    <div class="fieldset__difficulty fieldset__style-field">
+                        <label for="difficulty">Dificuldade*</label>
+                        <select id="difficulty" name="difficulty" required>
+                            <option value="" selected disabled>Selecione...</option>
+                            <option value="facil">Fácil</option>
+                            <option value="medio">Médio</option>
+                            <option value="dificil">Difícil</option>
+                        </select>
+                        <span class="fieldset__span">Campo obrigatório</span>
+                    </div>
+
+                    <div class="fieldset__city fieldset__style-field">
+                        <label for="city">Cidade*</label>
+                        <input id="city" name="city" type="text" placeholder="Ex: Matones" required />
+                        <span class="fieldset__span">Campo obrigatório</span>
+                    </div>
+
+                    <div class="fieldset__uf fieldset__style-field">
+                        <label for="uf">UF*</label>
+                        <input id="uf" name="uf" type="text" placeholder="Ex: SP" maxlength="2" required />
+                        <span class="fieldset__span fieldset__span-uf">Campo obrigatório ou UF inválida</span>
+                    </div>
+
+                    <div class="fieldset__entity fieldset__style-field">
+                        <label for="entity">Entidade*</label>
+                        <select id="entity" name="entity" required>
+                            <option value="" selected disabled>Selecione...</option>
+                            <!-- <option value="fantasmas">Fantasmas</option>
+                            <option value="investigacao">Investigação</option>
+                            <option value="criaturas">Criaturas</option>
+                            <option value="rastreio">Rastreio</option>
+                            <option value="outros">Outros</option> -->
+                        </select>
+                        <span class="fieldset__span">Campo obrigatório</span>
+                    </div>
+
+                    <div class="fieldset__latitude fieldset__style-field">
+                        <label for="latitude">Latitude*</label>
+                        <input id="latitude" name="latitude" type="text" placeholder="Ex: 49.390219" required />
+                        <div class="fieldset__span fieldset__span-latitude">                            
+                            <span>Campo obrigatório</span>
+
+                            <ul>
+                                <li>Valores permitidos: -90 a +90</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="fieldset__longitude fieldset__style-field">
+                        <label for="longitude">Longitude*</label>
+                        <input id="longitude" name="longitude" type="text" placeholder="Ex: -122.989969" required />
+                        <div class="fieldset__span fieldset__span-longitude">                            
+                            <span>Campo obrigatório</span>
+
+                            <ul>
+                                <li>Valores permitidos: -180 a +180</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="fieldset__date fieldset__style-field">
+                        <label for="date">Data*</label>
+                        <input id="date" name="date" type="date" required />
+                        <span class="fieldset__span">Campo obrigatório</span>
+                    </div>
+
+                    <div class="fieldset__summary fieldset__style-field">
+                        <label for="summary">Resumo*</label>
+                        <textarea id="summary" name="summary" rows="4"
+                            placeholder="Ex: No hospital de matones, luzes piscam e o elevador funciona sozinho"
+                            required></textarea>
+                        <span class="fieldset__span">Campo obrigatório</span>
+                    </div>
+
+                    <button class="fieldset__button-submit" type="submit">Cadastrar</button>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <app-footer></app-footer>
+</body>
+
+</html>

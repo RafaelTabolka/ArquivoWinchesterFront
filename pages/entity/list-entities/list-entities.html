@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Arquivo Winchester</title>
+
+    <!-- Carrega o CSS -->
+    <link rel="stylesheet" href="/components/navbar/navbar.css">
+    <link rel="stylesheet" href="/components/footer/footer.css">
+    <link rel="stylesheet" href="list-entities.css">
+
+    <!-- Carrega o Favicon-->
+    <link rel="icon" href="/favicon/img_favicon.png">
+
+    <!-- Carrega o JS -->
+    <script src="/components/navbar/navbar.js" defer></script>
+    <script src="/components/footer/footer.js" defer></script>
+    <script src="list-entities.js" defer></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#content">Pular Menu de Navegação</a>
+
+    <app-navbar></app-navbar>
+
+    <!-- Main content -->
+    <main id="content" class="main-content" tabindex="-1">
+        <h1>Entidades</h1>
+
+        <!-- Section links -->
+        <section class="section-links" aria-label="Ações de caçadas">
+            <a href="/pages/entity/register-entity/register-entity.html" class="section-links__new-hunt">Nova
+                Entidade</a>
+            <a href="/pages/entity/list-entities/list-entities.html" class="section-links__list-hunts"
+                aria-current="page">Ver Entidades</a>
+        </section>
+
+        <!-- Section table -->
+        <section class="section-table" aria-label="Últimas ocorrências">
+            <h3>Últimas Caçadas</h3>
+
+            <table class="section-table__table">
+                <thead class="section-table__thead">
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col" class="section-table__hide-in-mobile">Contramedida</th>
+                        <th scope="col">Nível Risco</th>
+                        <th scope="col" class="section-table__hide-in-mobile">Sinais Comuns</th>
+                        <th scope="col" class="section-table__hide-in-mobile">Editar</th>
+                        <th scope="col" class="section-table__hide-in-mobile">Excluir</th>
+                        <th scope="col" class="section-table__hide-in-desktop">Detalhes</th>
+                    </tr>
+                </thead>
+
+                <tbody class="section-table__tbody">
+                    <!-- <tr>
+                        <td>Fantasma</td>
+                        <td class="section-table__hide-in-mobile">Barreira de sal, barra de ferro e cartucho com sal
+                        </td>
+                        <td><span class="section-table__level-risk--1">1</span></td>
+                        <td class="section-table__hide-in-mobile">Luzes piscando e temperatura baixa no ambiente</td>
+
+                        <td class="section-table__hide-in-mobile">
+                            <button class="section-table__button-edit">
+                                <img src="/assets/img/img-list-entities/img_edit.png" alt="">
+                            </button>
+                        </td>
+
+                        <td class="section-table__hide-in-mobile">
+                            <button class="section-table__image-delete">
+                                <img src="/assets/img/img-list-entities/img_crash.png" alt="">
+                            </button>
+                        </td>
+
+                        <td class="section-table__hide-in-desktop">
+                            <img class="section-table__arrow-down" src="/assets/img/img-home/img_arrow_down.png" alt="">
+                        </td>
+                    </tr>
+
+                    <tr class="section-table__details section-table__hide-in-desktop">
+                        <td colspan="7">
+                            <p>Sinais Comuns: <span>Luzes piscando e temperatura baixa no ambiente</span></p>
+                            <p>Contramedida: <span>Barreira de sal, barra de ferro e cartucho com sal</span></p>
+
+                            <div class="section-table__images-details">
+                                <button class="section-table__button-edit">
+                                    <img src="/assets/img/img-list-entities/img_edit.png"
+                                        alt="Ícone de diário de caçador (anotações do Arquivo Winchester)">
+                                </button>
+
+                                <button class="section-table__image-delete">
+                                    <img src="/assets/img/img-list-entities/img_crash.png"
+                                        alt="Ícone de lixeira para excluir/remover o registro">
+                                </button>
+                            </div>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+            
+            <span class="section-table__span-qty"></span>
+        </section>
+
+        <!-- Pagination -->
+        <nav class="pagination" aria-label="Paginação">
+            <button class="prev-btn" type="button">Anterior</button>
+            <button class="next-btn" type="button">Próximo</button>
+        </nav>
+    </main>
+
+    <!-- Dialog -->
+    <dialog class="dialog-edit">
+        <h2>Atualizar Entidade</h2>
+        <button class="form-edit__close-modal">
+            <img src="/assets/img/img-list-entities/img_close_modal.png" alt="">
+        </button>
+        
+        <form class="form-edit">
+
+            <div class="form-edit__closest form-edit__name form-edit__style-field">
+                <label for="entityName">Nome*</label>
+                <input id="entityName" name="entityName" type="text" placeholder="Ex: Criatura Noturna" required />
+                <span class="form-edit__span-field">Campo obrigatório</span>
+            </div>
+
+            <div class="form-edit__closest form-edit__counter-measure form-edit__style-field">
+                <label for="counterMeasure">Contramedida*</label>
+                <input id="counterMeasure" name="counterMeasure" type="text" placeholder="Ex: Barreira Salina..."
+                    required />
+                <span class="form-edit__span-field">Campo obrigatório</span>
+            </div>
+
+            <div class="form-edit__closest form-edit__risk-level form-edit__style-field">
+                <label for="riskLevel">Nível Risco*</label>
+                <select id="riskLevel" name="riskLevel" required>
+                    <option value="" selected disabled>Selecione...</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <span class="form-edit__span-field">Campo obrigatório</span>
+            </div>
+
+            <div class="form-edit__closest form-edit__entity-image form-edit__style-field">
+                <div class="form-edit__container-file">
+                    <label class="form-edit__file" for="entityImage">Trocar Imagem</label>
+                    <input id="entityImage" name="entityImage" type="file" />
+                    <span class="form-edit__file-name">Vazio</span>
+                </div>
+
+                <div class="form-edit__span-field form-edit__span-file">
+                    <span>Extensões permitidas:</span>
+
+                    <ul>
+                        <li>png</li>
+                        <li>jpg</li>
+                        <li>jpeg</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="form-edit__closest form-edit__common-signs form-edit__style-field">
+                <label for="commonSigns">Sinais Comuns*</label>
+                <textarea id="commonSigns" name="commonSigns" rows="4"
+                    placeholder="Ex: Ruídos, falhas elétricas, temperatura baixa..." required></textarea>
+                <span class="form-edit__span-field">Campo obrigatório</span>
+            </div>
+
+            <button class="form-edit__button-submit" type="submit">Atualizar</button>
+        </form>
+    </dialog>
+
+    <app-footer></app-footer>
+</body>
+
+</html>

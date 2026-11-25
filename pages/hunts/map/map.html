@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapa de Caçadas - Arquivo Winchester</title>
+
+    <!-- Carrega o CSS -->
+    <link rel="stylesheet" href="/components/navbar/navbar.css">
+    <link rel="stylesheet" href="/components/footer/footer.css">
+    <link rel="stylesheet" href="map.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <!-- Carrega o favicon -->
+    <link rel="icon" href="/favicon/img_favicon.png">
+
+    <!-- Carrega o JS -->
+    <script src="/components/navbar/navbar.js" defer></script>
+    <script src="/components/footer/footer.js" defer></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script type="module" src="map.js"></script>
+
+</head>
+
+<body>
+    <!-- Skip link -->
+    <a class="skip-link" href="#content">Pular Menu de Navegação</a>
+
+    <app-navbar></app-navbar>
+
+    <!-- Main content -->
+    <main id="content" class="main-content" tabindex="-1">
+        <h1>Caçadas</h1>
+
+        <!-- Section links -->
+        <section class="section-links" aria-label="Ações de caçadas">
+            <a href="/pages/hunts/register-hunts/register-hunts.html" class="section-links__new-hunt">Nova Caçada</a>
+            <a href="/pages/hunts/list-hunts/list-hunts.html" class="section-links__list-hunts">Ver Caçadas</a>
+            <a href="/pages/hunts/map/map.html" class="section-links__map" aria-current="page">Mapa</a>
+        </section>
+
+        <!-- Container sections -->
+        <div class="container-sections">            
+            <!-- Section filters -->
+            <section aria-label="Filtros" class="section-filters">
+                <button class="button-filter">                
+                    <img src="/assets/img/img-map/img_filter.png" alt="Ícone de funil dourado com brilho sobrenatural, representando filtros">
+                </button>
+                
+                <div class="container-filters">                
+                    <h2>Filtros</h2>
+        
+                    <form class="form-filters" action="#" method="get">
+                        <div class="form-filters__entity form-filters__style-field">
+                            <label for="entity">Entidade</label>
+                            <select id="entity" name="entity">
+                                <option value="" selected>Selecione...</option>
+                                <option value="ghosts">Fantasmas</option>
+                                <option value="investigation">Investigação</option>
+                                <option value="creatures">Criaturas</option>
+                                <option value="tracking">Rastreio</option>
+                                <option value="others">Outros</option>
+                            </select>
+                        </div>
+        
+                        <div class="form-filters__difficulty form-filters__style-field">
+                            <label for="difficulty">Dificuldade</label>
+                            <select id="difficulty" name="difficulty">
+                                <option value="" selected>Selecione...</option>
+                                <option value="facil">Fácil</option>
+                                <option value="medio">Média</option>
+                                <option value="dificil">Difícil</option>
+                            </select>
+                        </div>
+        
+                        <div class="form-filters__status form-filters__style-field">
+                            <label for="status">Status</label>
+                            <select id="status" name="status">
+                                <option value="" selected>Selecione...</option>
+                                <option value="aberto">Aberto</option>
+                                <option value="investigando">Investigando</option>
+                                <option value="resolvido">Resolvido</option>
+                                <option value="arquivado">Arquivado</option>
+                            </select>
+                        </div>
+        
+                        <div class="form-filters__city form-filters__style-field">
+                            <label for="city">Cidade</label>
+                            <select id="city" name="city">
+                                <option value="" selected>Selecione...</option>
+                                <option value="matones">Matones</option>
+                                <option value="sao-paulo">São Paulo</option>
+                                <option value="campinas">Campinas</option>
+                                <option value="ribeirao-preto">Ribeirão Preto</option>
+                            </select>
+                        </div>
+        
+                        <div class="form-filters__buttons">
+                            <button class="form-filters__button-submit" type="submit" aria-label="Aplicar filtros">
+                                Aplicar
+                            </button>
+                            
+                            <button class="form-filters__button-clear" type="reset" aria-label="Limpar filtros">
+                                Limpar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+    
+            <!-- Map -->
+            <section class="section-map" aria-label="Mapa de Caçadas">
+                <h2>Mapa de Caçadas</h2>
+
+                <div>
+                    <div id="map-hunts"></div>
+                    
+                    <article class="section-map__article">
+                        <div class="section-map__container-article">                        
+                            <strong>Dificuldade</strong>
+                            <ul>
+                                <li><span class="dot dot-easy"></span> Fácil</li>
+                                <li><span class="dot dot-medium"></span> Média</li>
+                                <li><span class="dot dot-hard"></span> Difícil</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <app-footer></app-footer>
+</body>
+
+</html>

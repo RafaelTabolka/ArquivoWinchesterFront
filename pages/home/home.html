@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Arquivo Winchester</title>
+
+    <!-- Carrega o CSS -->
+    <link rel="stylesheet" href="/components/navbar/navbar.css">
+    <link rel="stylesheet" href="/components/footer/footer.css">
+    <link rel="stylesheet" href="home.css">
+
+    <!-- Carrega o Favicon-->
+    <link rel="icon" href="/favicon/img_favicon.png">
+
+    <!-- Carrega o JS -->
+    <script src="/components/navbar/navbar.js" defer></script>
+    <script src="/components/footer/footer.js" defer></script>
+    <script type="module" src="home.js" defer></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#content">Pular Menu de Navegação</a>
+
+    <app-navbar></app-navbar>
+
+    <!-- Main content -->
+    <main id="content" class="main-content" tabindex="-1">
+        <h1>Painel do Bunker</h1>
+
+        <!-- Section cards -->
+        <section class="section-cards" aria-label="Resumo de casos">
+            <article class="section-cards__style-card">
+                <h3>Casos Abertos</h3>
+                <p class="section-cards__open-cases">0</p>
+                <img class="section-cards__img" src="/assets/img/img-home/img_open_cases.png"
+                    alt="Ícone de prancheta com lupa, representando casos abertos" />
+            </article>
+
+            <article class="section-cards__style-card">
+                <h3>Casos Investigando</h3>
+                <p class="section-cards__cases-under-investigation">0</p>
+                <img class="section-cards__img" src="/assets/img/img-home/img_cases_under_investigation.png"
+                    alt="Ícone de mural de investigação com lupa, representando casos em investigação" />
+            </article>
+
+            <article class="section-cards__style-card">
+                <h3>Casos Resolvidos</h3>
+                <p class="section-cards__solved-cases">0</p>
+                <img class="section-cards__img" src="/assets/img/img-home/img_solved_cases.png"
+                    alt="Ícone de prancheta com check, representando casos resolvidos" />
+            </article>
+
+            <article class="section-cards__style-card">
+                <h3>Casos Arquivados</h3>
+                <p class="section-cards__archived-cases">0</p>
+                <img class="section-cards__img" src="/assets/img/img-home/img_archived_cases.png"
+                    alt="Ícone de caixa de arquivo, representando casos arquivados" />
+            </article>
+        </section>
+
+        <!-- Section table -->
+        <section class="section-table" aria-label="Últimas ocorrências">
+            <h3>Últimas Caçadas</h3>
+
+            <table class="section-table__table">
+                <thead class="section-table__thead">
+                    <tr>
+                        <th scope="col">Título</th>
+                        <th scope="col" class="section-table__hide-in-mobile">Tipo</th>
+                        <th scope="col">Dificuldade</th>
+                        <th scope="col" class="section-table__hide-in-mobile">Cidade</th>
+                        <th scope="col" class="section-table__hide-in-mobile">Data</th>
+                        <th scope="col" class="section-table__hide-in-mobile">Descrição</th>
+                        <th scope="col" class="section-table__hide-in-desktop">Detalhes</th>
+                    </tr>
+                </thead>
+
+                <tbody class="section-table__tbody">
+                    <!-- <tr>
+                        <td>EMF disparando no porão</td>
+                        <td class="section-table__hide-in-mobile">Aparição</td>
+                        <td><span class="section-table__hard-difficulty">Difícil</span></td>
+                        <td class="section-table__hide-in-mobile">São Paulo - SP</td>
+                        <td class="section-table__hide-in-mobile">25/04/2026</td>
+                        <td class="section-table__hide-in-mobile">
+                            Há relatos de desaparecimento numa casa abandonada com
+                            luzes piscando.
+                        </td>
+                        <td class="section-table__hide-in-desktop">
+                            <img class="section-table__arrow-down" src="/assets/img/img-home/img_arrow_down.png" alt="">
+                        </td>
+                    </tr>
+
+                    <tr class="section-table__details section-table__details--open section-table__hide-in-desktop">
+                        <td colspan="7">
+                            <p>Tipo: <span>Aparição</span></p>
+                            <p>Cidade: <span>São Paulo - SP</span></p>
+                            <p>Data: <span>25/04/2026</span></p>
+                            
+                            <p>
+                                Descrição:
+                                <span>
+                                    Há relatos de desaparecimento numa casa abandonada com luzes
+                                    piscando.
+                                </span>
+                            </p>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <app-footer></app-footer>
+</body>
+
+</html>

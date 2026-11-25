@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entidades - Arquivo Winchester</title>
+
+    <!-- Carrega o CSS -->
+    <link rel="stylesheet" href="/components/navbar/navbar.css">
+    <link rel="stylesheet" href="/components/footer/footer.css">
+    <link rel="stylesheet" href="register-entity.css">
+
+    <!-- Carrega o favicon -->
+    <link rel="icon" href="/favicon/img_favicon.png">
+
+    <!-- Carrega o JS -->
+    <script src="/components/navbar/navbar.js" defer></script>
+    <script src="/components/footer/footer.js" defer></script>
+    <script src="register-entity.js" defer></script>
+</head>
+
+<body>
+    <!-- Skip link -->
+    <a class="skip-link" href="#content">Pular Menu de Navegação</a>
+
+    <app-navbar></app-navbar>
+
+    <!-- Main content -->
+    <main id="content" class="main-content">
+        <h1>Entidades</h1>
+
+        <!-- Section links -->
+        <section class="section-links" aria-label="Ações de caçadas">
+            <a href="/pages/entity/register-entity/register-entity.html" class="section-links__new-hunt" aria-current="page">Nova Entidade</a>
+            <a href="/pages/entity/list-entities/list-entities.html" class="section-links__list-hunts">Ver Entidades</a>
+        </section>
+
+        <section class="section-container" aria-label="Cadastrar entidade">
+            <h2>Cadastrar Entidade</h2>
+
+            <!-- Form -->
+            <form class="form">
+                <div class="form__closest form__name form__style-field">
+                    <label for="entityName">Nome*</label>
+                    <input id="entityName" name="entityName" type="text" placeholder="Ex: Criatura Noturna" required />
+                    <span class="form__span-field">Campo obrigatório</span>
+                </div>
+
+                <div class="form__closest form__counter-measure form__style-field">
+                    <label for="counterMeasure">Contramedida*</label>
+                    <input id="counterMeasure" name="counterMeasure" type="text" placeholder="Ex: Barreira Salina..."
+                        required />
+                        <span class="form__span-field">Campo obrigatório</span>
+                </div>
+
+                <div class="form__closest form__risk-level form__style-field">
+                    <label for="riskLevel">Nível Risco*</label>
+                    <select id="riskLevel" name="riskLevel" required>
+                        <option value="" selected disabled>Selecione...</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <span class="form__closest form__span-field">Campo obrigatório</span>
+                </div>
+
+                <div class="form__closest form__entity-image form__style-field">
+                    <div class="form__container-file">                        
+                        <label class="form__file" for="entityImage">Selecionar Imagem</label>
+                        <input id="entityImage" name="entityImage" type="file" />
+                        <span class="form__file-name">Vazio</span>
+                    </div>
+
+                    <div class="form__span-field form__span-file">                        
+                        <span>Extensões permitidas:</span>
+
+                        <ul>
+                            <li>png</li>
+                            <li>jpg</li>
+                            <li>jpeg</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="form__closest form__common-signs form__style-field">
+                    <label for="commonSigns">Sinais Comuns*</label>
+                    <textarea id="commonSigns" name="commonSigns" rows="4"
+                        placeholder="Ex: Ruídos, falhas elétricas, temperatura baixa..." required></textarea>
+                        <span class="form__span-field">Campo obrigatório</span>
+                </div>
+
+                <button class="form__button-submit" type="submit">Cadastrar</button>
+            </form>
+        </section>
+    </main>
+
+    <app-footer></app-footer>
+</body>
+
+</html>

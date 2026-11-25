@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Arquivo Winchester</title>
+
+    <!-- Carrega CSS -->
+    <link rel="stylesheet" href="/components/navbar/navbar.css">
+    <link rel="stylesheet" href="/components/footer/footer.css">
+    <link rel="stylesheet" href="login.css">
+
+    <!-- Carrega o favicon -->
+     <link rel="icon" href="/favicon/img_favicon.png">
+
+    <!-- Carrega JS -->
+    <script src="/components/navbar/navbar.js" defer></script>
+    <script src="/components/footer/footer.js" defer></script>
+    <script src="login.js" defer></script>
+</head>
+
+<body>
+    <!-- Skip link -->
+    <a class="skip-link" href="#content">Pular Menu de Navegação</a>
+    
+    <app-navbar></app-navbar>
+    
+    <!-- Main content -->
+    <main class="main-content" tabindex="-1">
+        <!-- Section container -->
+        <section class="section-container" aria-label="Área de login">
+            <h2>Acessar Arquivos</h2>
+
+            <form class="section-container__form">
+                <div class="section-container__style-field">
+                    <label for="hunterName">Nome do Caçador*</label>
+                    <input id="hunterName" name="hunterName" type="text" placeholder="Ex: Bob Singer" required />
+                    <span class="section-container__span">Campo obrigatório</span>
+                </div>
+                
+                <div class="section-container__style-field">
+                    <label for="password">Senha*</label>
+                    <input id="password" name="password" type="password" placeholder="" required />
+                    <span class="section-container__span">Campo obrigatório</span>
+                </div>
+    
+                <p class="section-container__link-register">
+                    Não possui cadastro?
+                    <a href="/pages/register/register.html">Clique aqui</a>
+                </p>
+
+                <button class="section-container__button-submit" type="submit">Entrar</button>
+            </form>
+
+        </section>
+    </main>
+
+    <app-footer></app-footer>
+</body>
+
+</html>
